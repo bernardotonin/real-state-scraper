@@ -1,4 +1,4 @@
-import { fetchFromZap, getZapUrl } from "../lib/utils.js";
+import { fetchFromZap } from "../lib/utils.js";
 import { saveMany } from "../repository/PropertyRepository.js";
 
 export const ZapScrape = async () => {
