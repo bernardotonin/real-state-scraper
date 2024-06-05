@@ -1,30 +1,34 @@
-import prisma from "../lib/db.js"
-import { PrismaProperty } from "../lib/interfaces.js"
+import { PrismaProperty } from "../lib/interfaces.js";
+import prisma from "../lib/db.js";
 
 export const create = async (property: PrismaProperty) => {
   return await prisma.propriedade.create({
-    data: property
-  })
-}
+    data: property,
+  });
+};
 
 export const createMany = async (properties: PrismaProperty[]) => {
   return await prisma.propriedade.createMany({
-    data: properties
-  })
-}
+    data: properties,
+  });
+};
 
-const findById = async () => {
-    
-}
-
-const findAll = async () => {
-    
-}
-
-const update = async () => {
-    
-}
-
-const deleteById = async () => {
-    
-}
+export const findByFields = async (
+  property: PrismaProperty
+): Promise<boolean> => {
+  try {
+    await prisma.propriedade.findFirstOrThrow({
+      where: {
+        area: property.area,
+        preco: property.preco,
+        quartos: property.quartos,
+        bairro: property.bairro,
+        tipo: property.tipo,
+        uso: property.uso,
+      },
+    });
+    return true;
+  } catch (error) {
+    return false;
+  }
+};
