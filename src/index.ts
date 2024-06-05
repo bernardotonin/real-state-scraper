@@ -1,3 +1,3 @@
-import { ZapScrape } from "./scraper/zap.js";
+import { populateDb } from "./lib/utils.js";
 
-ZapScrape();
+populateDb();
