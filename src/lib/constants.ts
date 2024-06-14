@@ -9,5 +9,5 @@ export const VivaHeaders = {
 };
 
 export const ProxyAgent = new HttpsProxyAgent(
-  "http://bernardo.btp@Bt35243681$@proxy.pmfi.pr.gov.br:8080"
+  ""
 ); // < endereço proxy aqui
