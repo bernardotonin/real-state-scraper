@@ -26,7 +26,7 @@ export const getZapCount = async (): Promise<number> => {
   return Math.floor(json.search.totalCount / 108);
 };
 
-export const ZapScrape = async () => {
+export const ZapScrape = async (): Promise<void> => {
   let from = 0;
   let size = 110;
   for (let i = 0; i <= await getZapCount(); i++) {

@@ -26,7 +26,7 @@ export const fetchFromViva = async (
   return parseJson(json.search.result.listings);
 };
 
-export const VivaScrape = async () => {
+export const VivaScrape = async (): Promise<void> => {
   let from = 0;
   let size = 110;
 
