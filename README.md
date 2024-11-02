@@ -10,6 +10,7 @@ Esse projeto foi realizado durante meu estágio na Secretária Municipal da Faze
 -   Utilização de **hidden APIs** para garantir uma coleta de dados mais rápida e direta.
 -   Dados coletados incluem informações como preço, localização, tamanho, e outros detalhes relevantes dos imóveis.
 - Os dados extraídos são salvos em um banco de dados **MySQL**, utilizando **Prisma** como ORM.
+- A aplicação usa um agente proxy para uso em ambientes corporativos.
 
 ## Tecnologias Utilizadas
 
@@ -34,12 +35,14 @@ Esse projeto foi realizado durante meu estágio na Secretária Municipal da Faze
     `npm install` 
     
 5.  Crie um arquivo `.env` na raiz do projeto e adicione a variável de ambiente **DATABASE_URL**, referente ao endereço do seu banco de dados MySQL
+   
+7.  No arquivo `/src/lib/constants.ts` adicione o endereço proxy desejado.
     
     
-7.  Execute as migrações do banco de dados:
+8.  Execute as migrações do banco de dados:
    
     `npx prisma migrate dev` 
     
-8.  Execute o script de scraping:
+9.  Execute o script de scraping:
     
     `npm start` 
